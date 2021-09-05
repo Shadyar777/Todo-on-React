@@ -12,7 +12,7 @@ const App = () => {
   const [activeItem, setActiveItem] = useState(null);
   let history = useHistory();
   let Location = useLocation();
-  console.log(Location);
+  // console.log(Location);
 
   useEffect(() => {
     axios
