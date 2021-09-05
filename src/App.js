@@ -38,7 +38,7 @@ const App = () => {
     if (listId && lists) {
       const foundList = lists.find(item => item.id === Number(listId));
       setActiveItem(foundList);
-    }
+    } else setActiveItem(null)
   }, [lists, Location.pathname, history.location.pathname])
   
   //! Задачи
@@ -120,8 +120,6 @@ const App = () => {
     setLists(newLists);
   }
   
-  
-
   return (
     <div className='todo'>
       <div className='todo__slider'>
