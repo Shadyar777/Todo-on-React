@@ -12,7 +12,7 @@ function Task({list, editTitle, editTask, removeTask, onAddTask}) {
   return (
     <div className='task'>
       <h2 className='task__title'>
-        <Link to={`/lists/${list.id}`}>{list && list.name}</Link>
+        <Link style = {{color : list.color.hex}} to={`/lists/${list.id}`}>{list && list.name}</Link>
         <img onClick={() => editTitle(list)} src={editSvg} alt='Edit task' />
       </h2>
       <div className='task__items'>
