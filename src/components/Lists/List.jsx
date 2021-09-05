@@ -19,7 +19,7 @@ function List({items, isRemovable, activeItem, onClick, onRemove, onClickItem}) 
       {items.map((item, index) => (
         <li key = {index} 
         onClick = {onClickItem ? () => onClickItem(item) : null} 
-        className={classNames({active: items.active ? (items.active) : (activeItem && activeItem.id === item.id)}, item.addClassName)}>
+        className={classNames({active: item.active ? (item.active) : (activeItem && activeItem.id === item.id)}, item.addClassName)}>
 
           {item.icon ? <i>{item.icon}</i> : <Badge key={item.id} color = {item.color.name} />}
 
