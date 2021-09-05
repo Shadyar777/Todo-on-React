@@ -1,0 +1,70 @@
+@import 'null.scss';
+
+* {
+  font-family: -apple-system, 'Times New Roman', Times, serif;
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #4DD599; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}
+
+
+body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: rgba(0, 0, 0, 0.363);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo {
+  display: flex;
+  width: 750px;
+  height: 550px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+
+
+  &__slider {
+    background: #E5E5E5;
+    width: 200px;
+    padding: 60px 30px;
+    font-size: 14px;
+
+    &-preloader{
+      width: 100%;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items:center;
+    }
+  }
+
+  &__tasks {
+    background: #fff;
+    flex: 1;
+    padding: 30px 60px;
+    overflow: auto;
+    
+  }
+}
+

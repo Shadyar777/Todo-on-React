@@ -1,0 +1,55 @@
+.task {
+
+  &__addfrom {
+    margin-top: 20px;
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      opacity: .9;
+    }
+
+    span {
+      margin-left: 8px;
+    }
+  }
+
+  &__form {
+    margin-top: 20px;
+    display: grid;
+    grid-template-areas:
+      "input input"
+      "add canl";
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 1fr 1fr;
+
+    &-input {
+      grid-area: input;
+      padding: 5px;
+      height: 35px;
+      // background: #fff;
+      // border: 5px solid #000;
+    }
+
+    button {
+      border-radius: 5px;
+      margin: 5px 10px;
+      height: 30px;
+    }
+
+    &-add {
+      grid-area: add;
+      background: #4DD599;
+      color: #fff;
+
+      &:hover {
+        background: darken(#4DD599, 10%);
+      }
+    }
+
+    &-cancellation {
+      grid-area: canl;
+    }
+  }
+}

@@ -1,0 +1,98 @@
+.add-list {
+  &__popup {
+    position: relative;
+    width: 220px;
+    height: 148px;
+    background: #FFFFFF;
+    box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.329);
+    border-radius: 10px;
+    padding: 20px;
+    // background: rgba(0, 0, 0, 0.137);
+    position: absolute;
+    margin-top: -20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 15px;
+
+    .add-list__popup-indents {
+      flex: 1 1 auto;
+      margin: 5px 0;
+    }
+
+    input {
+      padding: 6px;
+      border: 1px solid #EFEFEF;
+      &::placeholder {
+        font-family: Lato;
+        color: #C7C7C7;
+      }
+      &:focus{
+        border: 1px solid rgba(0, 0, 255, 0.267);
+      }
+    }
+    &-close {
+      display: inline;
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      opacity: .5;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__popup-colors {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .badge {
+      width: 17px;
+      height: 17px;
+      cursor: pointer;
+      border: 2px solid transparent;
+
+      &:hover {
+        border: 2px solid #525252;
+        transform: scale(1.4);
+      }
+    }
+    .active{
+      border: 2px solid #525252;
+      transform: scale(1.4);
+    }
+  }
+
+  .button {
+    width: 100%;
+    height: 37px;
+    background: #4DD599;
+    border-radius: 4px;
+    color: #fff;
+    padding: 10px;
+    &:hover {
+      background: darken(#4DD599, 10%);
+    }
+  }
+
+  .list__add-button{
+    opacity: 0.4;
+
+    &:hover{
+      opacity: 1;
+    }
+  }
+  
+}
+
+.field {
+  width: 100%;
+  background: #FFFFFF;
+  border: 2px solid #EFEFEF;
+  box-sizing: border-box;
+  border-radius: 4px;
+}

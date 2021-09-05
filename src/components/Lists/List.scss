@@ -1,0 +1,64 @@
+.todo {
+
+  &__list {
+    // height: 40px;
+    margin-bottom: 30px;
+
+    li {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      padding: 10px 12px;
+
+      i {
+        margin-right: 8px;
+        width: 10px;
+      }
+      .listSvg {
+        margin-left: -5px;
+      }
+
+      span {
+        flex: 1;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 160px;
+        white-space: nowrap;
+      }
+
+
+
+      &.active {
+        background: #ffffff36;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+        border-radius: 4px;
+      }
+
+      &:hover {
+        background: #ffffff36;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+        border-radius: 4px;
+
+        img {
+          opacity: .3;
+        }
+      }
+
+      img {
+        opacity: 0;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+
+    // &__list-icon {
+    //   display: block;
+    //   background: #000;
+    // }
+
+    // &__list-text {}
+  }
+}
