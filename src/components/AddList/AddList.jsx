@@ -16,6 +16,8 @@ function AddList({colors, onAdd}) {
   };
   const closePopup = () => {
     setVisiblePopup(!visiblePopup);
+    setInputValue("");
+    setSelectColor(colors[0].id);
   };
   useEffect(() => {
     if (Array.isArray(colors)) setSelectColor(colors[0].id);
