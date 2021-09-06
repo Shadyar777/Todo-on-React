@@ -60,7 +60,6 @@
 
       label {
         position: absolute;
-        // background: #4DD599;
         border: 2px solid #4DD599;
         box-sizing: border-box;
         border-radius: 50%;
@@ -101,6 +100,11 @@
         color: #000000;
         margin: 10px 0 10px 15px;
         flex: 1;
+
+        &.completed {
+          text-decoration: line-through;
+          text-decoration-color: #4DD599;
+        }
       }
 
 
