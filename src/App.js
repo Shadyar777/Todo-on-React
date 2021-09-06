@@ -4,7 +4,7 @@ import {Route, useHistory, useLocation} from 'react-router-dom';
 import AddList from './components/AddList/AddList';
 
 import List from './components/Lists/List';
-import Task from './components/Tasks/Task';
+import Tasks from './components/Tasks/Tasks';
 
 const App = () => {
   const [lists, setLists] = useState();
@@ -119,6 +119,29 @@ const App = () => {
     })
     setLists(newLists);
   }
+
+  const onCompleteCheckBox = (id, listId, isCompleted) => {
+    axios
+      .patch('http://localhost:3001/tasks/' + id, {
+        completed: isCompleted,
+      })
+      .then(() => {
+        let newLists = lists.map((list) => {
+          if (list.id === listId) {
+            list.tasks = list.tasks.map((task) => {
+              if (task.id === id) {
+                task.completed = isCompleted;
+              }
+              return task;
+            });
+          }
+          return list;
+        });
+        setLists(newLists);
+      })
+      .catch((err) => alert('Не удалось обновить задачу', err));
+  };
+  
   
   return (
     <div className='todo'>
@@ -167,23 +190,26 @@ const App = () => {
       <div className='todo__tasks'>
         <Route exact path='/'>
           {lists && lists.map((item) => 
-          <Task key={item.id} 
+          <Tasks 
+          key={item.id} 
           list={item} 
           editTitle={onEditTitle} 
           editTask={onEditTask} 
           removeTask={onRemoveTask} 
           onAddTask = {onAddTask} 
+          onCompleteCheckBox = {onCompleteCheckBox}
 
           />)}
         </Route>
         <Route path='/lists/:id'>
           {lists && activeItem &&
-          <Task 
+          <Tasks 
           list={activeItem} 
           editTitle={onEditTitle} 
           editTask={onEditTask} 
           removeTask={onRemoveTask} 
           onAddTask = {onAddTask} 
+          onCompleteCheckBox = {onCompleteCheckBox}
           />}
         </Route>
       </div>

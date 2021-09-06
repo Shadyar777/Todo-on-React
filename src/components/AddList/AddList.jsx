@@ -69,8 +69,8 @@ function AddList({colors, onAdd}) {
           <div className='add-list__popup-indents add-list__popup-colors'>
             {colors.map((color) => (
               <Badge
-                onClick={() => setSelectColor(color.id)}
                 key={color.id}
+                onClick={() => setSelectColor(color.id)}
                 color={color.name}
                 addClassActive={selectColor === color.id && 'active'}
               />

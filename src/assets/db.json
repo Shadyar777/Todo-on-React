@@ -79,7 +79,7 @@
       "id": 2,
       "listId": 2,
       "text": "Изучить паттерны проектирования",
-      "completed": false
+      "completed": true
     },
     {
       "id": 3,
@@ -102,7 +102,7 @@
     {
       "listId": 7,
       "text": "Сделали сайдбар",
-      "completed": true,
+      "completed": false,
       "id": 15
     },
     {
