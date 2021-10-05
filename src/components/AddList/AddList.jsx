@@ -68,7 +68,7 @@ function AddList({colors, onAdd}) {
         ]}
       />
       {visiblePopup && (
-        <div className='add-list__popup'}>
+        <div className='add-list__popup'>
           <img onClick={closePopup} className='add-list__popup-close' src={closeSvg} alt='' />
           <input onKeyDown = {(e) => {if(e.key === "Enter") addForm()}} onChange={onChangeValue} value={inputValue} className='add-list__popup-indents field' type='text' placeholder='Название списка' />
           <div className='add-list__popup-indents add-list__popup-colors'>
