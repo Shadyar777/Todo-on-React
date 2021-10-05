@@ -204,6 +204,7 @@ const App = () => {
         <Route path='/lists/:id'>
           {lists && activeItem &&
           <Tasks 
+          key={Math.floor(Math.random())}
           list={activeItem} 
           editTitle={onEditTitle} 
           editTask={onEditTask} 

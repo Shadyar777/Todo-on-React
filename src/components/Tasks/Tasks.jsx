@@ -21,7 +21,7 @@ function Tasks({list, editTitle, editTask, removeTask, onAddTask, onCompleteChec
         {list &&
           list.tasks.map((item, index) => (
             <Task 
-            id = {index}
+            key = {index}
             item = {item} 
             editTask = {editTask} 
             removeTask = {removeTask}

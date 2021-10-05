@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 
 import './Form.scss';
 import addSvg from '../../../assets/svgs/add.svg';
@@ -7,6 +7,16 @@ import axios from 'axios';
 function AddTaskForm({list, onAddTask}) {
   const [visibilForm, setVisibilForm] = useState(true);
   const [inputValue, setinputValue] = useState('');
+  const taskRef = useRef(null);
+  console.log("reRender");
+  useEffect(() => {
+    document.addEventListener('click', (e) => {
+      if (!e.path.includes(taskRef.current)) {
+        setVisibilForm(true)
+      }
+    })
+    
+  }, [])
 
   const onVisibilForm = () => {
     setVisibilForm(!visibilForm);
@@ -38,7 +48,7 @@ function AddTaskForm({list, onAddTask}) {
           <span>Новая задача</span>
         </div>
       ) : (
-        <div className='task__form'>
+        <div className='task__form' ref = {taskRef}>
           <input
             className='task__form-input field'
             type='text'
@@ -60,5 +70,7 @@ function AddTaskForm({list, onAddTask}) {
     </>
   );
 }
+
+
 
 export default AddTaskForm;
